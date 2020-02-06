@@ -7,10 +7,6 @@ import java.util.List;
 public class RetrieveValidateTweetsUseCase {
     private TweetsRepository tweetsRepository;
 
-    public List<Tweet> retrieveAllTweets() {
-        return tweetsRepository.retrieveAllTweets();
-    }
-
     public List<Tweet> retrieveValidateTweets() {
         return tweetsRepository.retrieveValidateTweets();
     }
