@@ -1,0 +1,14 @@
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/twitter/TwitterMessageProducer.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/twitter/ApiTweeter.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/configuration/TwitterConfiguration.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/domain/ports/primary/TweetsRepository.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/h2/entity/TweetEntity.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/domain/entity/Tweet.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/h2/adapter/TweetDomainToTweetEntityAdapter.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/configuration/TweetsAppConfig.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/controller/TweetConsumerController.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/domain/ports/primary/RetrieveAllTweetsUseCase.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/TweetConsumerApp.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/domain/ports/primary/RetrieveValidateTweetsUseCase.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/h2/adapter/TweetEntityToTweetDomainAdapter.java
+/Users/achaves/Documents/Acciona/tweetconsumer/src/main/java/com/tweetconsumer/infrastructure/h2/TweetsJdbcRepository.java

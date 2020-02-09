@@ -15,9 +15,9 @@ import twitter4j.TwitterStreamFactory;
 import java.util.Arrays;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class TwitterConfiguration {
-    @Bean
+   /* @Bean
     TwitterStreamFactory twitterStreamFactory() {
         return new TwitterStreamFactory();
     }
@@ -47,5 +47,5 @@ public class TwitterConfiguration {
                 .transform(Status::getText)
                 .handle(m -> log.info(m.getPayload().toString()))
                 .get();
-    }
+    }*/
 }

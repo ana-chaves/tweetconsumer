@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface TweetsRepository {
     List<Tweet> retrieveAllTweets();
-    List<Tweet> retrieveValidateTweets();
+     List<Tweet> retrieveValidateTweets();
+     int save(Tweet tweet);
 }
