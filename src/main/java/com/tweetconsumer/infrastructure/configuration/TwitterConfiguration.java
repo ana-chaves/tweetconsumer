@@ -1,51 +1,24 @@
 package com.tweetconsumer.infrastructure.configuration;
 
-import com.tweetconsumer.infrastructure.twitter.TwitterMessageProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.integration.dsl.IntegrationFlow;
-import org.springframework.integration.dsl.IntegrationFlows;
-import org.springframework.integration.dsl.MessageChannels;
-import org.springframework.messaging.MessageChannel;
-import twitter4j.Status;
-import twitter4j.TwitterStream;
-import twitter4j.TwitterStreamFactory;
-
-import java.util.Arrays;
+import twitter4j.conf.ConfigurationBuilder;
 
 @Slf4j
-//@Configuration
+@Configuration
 public class TwitterConfiguration {
-   /* @Bean
-    TwitterStreamFactory twitterStreamFactory() {
-        return new TwitterStreamFactory();
-    }
 
-    @Bean
-    TwitterStream twitterStream(TwitterStreamFactory twitterStreamFactory) {
-        return twitterStreamFactory.getInstance();
+    @Bean()
+    public ConfigurationBuilder configurationBuilder() {
+        ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+        configurationBuilder.setDebugEnabled(true)
+                .setOAuthConsumerKey("KEY")
+                .setOAuthConsumerSecret("SECRET")
+                .setOAuthAccessToken("TOKEN")
+                .setOAuthAccessTokenSecret("TOKENSECRET");
+        configurationBuilder.setIncludeEntitiesEnabled(true);
+        configurationBuilder.setJSONStoreEnabled(true);
+        return configurationBuilder;
     }
-
-    @Bean
-    MessageChannel outputChannel() {
-        return MessageChannels.direct().get();
-    }
-
-    @Bean
-    TwitterMessageProducer twitterMessageProducer(
-            TwitterStream twitterStream, MessageChannel outputChannel) {
-        TwitterMessageProducer twitterMessageProducer =
-                new TwitterMessageProducer(twitterStream, outputChannel);
-        twitterMessageProducer.setTerms(Arrays.asList("java", "microservices", "spring"));
-        return twitterMessageProducer;
-    }
-
-    @Bean
-    IntegrationFlow twitterFlow(MessageChannel outputChannel) {
-        return IntegrationFlows.from(outputChannel)
-                .transform(Status::getText)
-                .handle(m -> log.info(m.getPayload().toString()))
-                .get();
-    }*/
 }

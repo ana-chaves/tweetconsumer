@@ -1,24 +1,18 @@
 package com.tweetconsumer.infrastructure.configuration;
 
-import com.tweetconsumer.controller.TweetConsumerController;
 import com.tweetconsumer.domain.ports.primary.RetrieveAllTweetsUseCase;
 import com.tweetconsumer.domain.ports.primary.RetrieveValidateTweetsUseCase;
 import com.tweetconsumer.domain.ports.primary.TweetsRepository;
-import com.tweetconsumer.infrastructure.h2.TweetsJdbcRepository;
+import com.tweetconsumer.domain.ports.primary.UpdateToValidateTweetUseCase;
+import com.tweetconsumer.infrastructure.h2.ITweetDao;
+import com.tweetconsumer.infrastructure.h2.TweetsH2Repository;
 import com.tweetconsumer.infrastructure.h2.adapter.TweetDomainToTweetEntityAdapter;
 import com.tweetconsumer.infrastructure.h2.adapter.TweetEntityToTweetDomainAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
 public class TweetsAppConfig {
-
-   /* @Bean
-    public TweetConsumerController tweetConsumerApplication(final RetrieveAllTweetsUseCase retrieveAllTweetsUseCase,
-                                                            final RetrieveValidateTweetsUseCase retrieveValidateTweetsUseCase) {
-        return new TweetConsumerController(retrieveAllTweetsUseCase, retrieveValidateTweetsUseCase);
-    }*/
 
     @Bean
     public RetrieveAllTweetsUseCase retrieveAllTweetsUseCase(final TweetsRepository tweetsRepository) {
@@ -30,12 +24,10 @@ public class TweetsAppConfig {
         return new RetrieveValidateTweetsUseCase(tweetsRepository);
     }
 
-   /* @Bean
-    public TweetsJdbcRepository tweetsJdbcRepository(final JdbcTemplate jdbcTemplate,
-                                                     final TweetEntityToTweetDomainAdapter tweetEntityToTweetDomainAdapter,
-                                                     final TweetDomainToTweetEntityAdapter tweetDomainToTweetEntityAdapter) {
-        return new TweetsJdbcRepository(jdbcTemplate, tweetEntityToTweetDomainAdapter, tweetDomainToTweetEntityAdapter);
-    }*/
+    @Bean
+    public UpdateToValidateTweetUseCase updateToValidateTweetUseCase(final TweetsRepository tweetsRepository) {
+        return new UpdateToValidateTweetUseCase(tweetsRepository);
+    }
 
     @Bean
     public TweetEntityToTweetDomainAdapter tweetEntityToTweetDomainAdapter() {
@@ -47,5 +39,12 @@ public class TweetsAppConfig {
         return new TweetDomainToTweetEntityAdapter();
     }
 
+    @Bean
+    public TweetsH2Repository tweetsH2Repository(final ITweetDao tweetDao,
+                                                 final TweetEntityToTweetDomainAdapter tweetEntityToTweetDomainAdapter,
+                                                 TweetDomainToTweetEntityAdapter tweetDomainToTweetEntityAdapter) {
+        return new TweetsH2Repository(tweetDao, tweetEntityToTweetDomainAdapter, tweetDomainToTweetEntityAdapter);
+
+    }
 
 }

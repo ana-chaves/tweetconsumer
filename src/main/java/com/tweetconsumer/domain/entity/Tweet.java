@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Tweet {
-    private int id;
+    private Long id;
     private String user;
     private String text;
     private String localization;

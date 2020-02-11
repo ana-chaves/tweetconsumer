@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tweetconsumer" />
+        <module name="tweetconsumer (1) (com.fernando.boluda)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="tweetconsumer" target="1.8" />
+      <module name="tweetconsumer (1) (com.fernando.boluda)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

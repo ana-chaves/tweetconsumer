@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com</groupId>
@@ -16,6 +16,11 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <openapi.version>1.1.49</openapi.version>
+        <twitter4j.version>4.0.7</twitter4j.version>
+        <junit.version>4.12</junit.version>
+        <h2.version>1.4.200</h2.version>
+        <junit.bom.version>5.3.1</junit.bom.version>
     </properties>
 
     <dependencies>
@@ -25,12 +30,12 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-core</artifactId>
-            <version>1.1.49</version>
+            <version>${openapi.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.github.classgraph</groupId>
@@ -41,7 +46,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.1.49</version>
+            <version>${openapi.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.classgraph</groupId>
@@ -54,40 +59,44 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.200</version>
+            <version>${h2.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-stream</artifactId>
-            <version>4.0.6</version>
+            <version>${twitter4j.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit</groupId>
             <artifactId>junit-bom</artifactId>
-            <version>5.3.1</version>
+            <version>${junit.bom.version}</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-
     </dependencies>
 
     <build>

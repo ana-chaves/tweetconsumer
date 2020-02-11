@@ -6,10 +6,11 @@ import lombok.AllArgsConstructor;
 import java.util.List;
 
 @AllArgsConstructor
-public class RetrieveAllTweetsUseCase  {
-  private TweetsRepository tweetsRepository;
+public class RetrieveAllTweetsUseCase {
 
-  public List<Tweet> retrieveAllTweets() {
-    return tweetsRepository.retrieveAllTweets();
-  }
+    private TweetsRepository tweetsRepository;
+
+    public List<Tweet> retrieveAllTweets() {
+        return tweetsRepository.retrieveAllTweets();
+    }
 }
