@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <openapi.version>1.1.49</openapi.version>
         <twitter4j.version>4.0.7</twitter4j.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <h2.version>1.4.200</h2.version>
         <junit.bom.version>5.3.1</junit.bom.version>
     </properties>
